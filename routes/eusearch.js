@@ -11,6 +11,11 @@ var options = {
 
 /* GET EU library search listing. */
 router.get('/eusearch', function(req, reseu, next) {
+  var options = {
+    hostname: 'data.theeuropeanlibrary.org',
+    path: '/opensearch/json?apikey=isuveu6roioo1b1ip6dub3ffml&',
+    method: 'get'
+  };
   options.path = options.path + querystring.stringify(req.query);
   var req = http.request(options, (res) => {
     var body = '';
